@@ -1,0 +1,26 @@
+{
+  "name": "poke-builder-v2",
+  "version": "1.0.0",
+  "description": "![PokeBuilder Logo](./assets/images/PokeBuilder.png) ## Our Project * We set out to build a site where you can look up the stats of any Pokemon by either name or number.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irvingjem/poke-builder-V2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/irvingjem/poke-builder-V2/issues"
+  },
+  "homepage": "https://github.com/irvingjem/poke-builder-V2#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.18.0",
+    "handlebars": "^4.7.7",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.19.0"
+  }
+}
