@@ -22,8 +22,8 @@ THEN the last Pokemon searched is removed from the screen.</br>~~
 ## Project Screenshot
 ![Project Screenshot](./assets/images/Under-Construction.png)
 ### Links
-[Project GitHub Repo](https://github.com/irvingjem/group-project) <br>
-[Project in GitHub Pages](https://irvingjem.github.io/group-project/)
+[Project GitHub Repo](https://github.com/irvingjem/poke-builder-V2) <br>
+[Project in GitHub Pages](https://irvingjem.github.io/poke-builder-V2/)
 [Poke Font Generator](https://textcraft.net/style/Textcraft/pokemon)
 
 ### Creators
