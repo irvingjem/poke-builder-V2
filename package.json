@@ -4,7 +4,8 @@
   "description": "![PokeBuilder Logo](./assets/images/PokeBuilder.png) ## Our Project * We set out to build a site where you can look up the stats of any Pokemon by either name or number.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
