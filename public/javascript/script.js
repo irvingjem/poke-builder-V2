@@ -1,6 +1,5 @@
 // Global Variables
 var abilitiesList = document.getElementById("abilities");
-let pokeNickname = document.getElementById("pokeNickname");
 let pokeDiv = document.getElementById("pokeDetails");
 var submitListener = document.getElementById("submitListener");
 var saveListener = document.getElementById("saveListener");
@@ -9,7 +8,7 @@ let deleteBtn = document.getElementById("deleteBtn");
 let storedPoke = localStorage.getItem('searchHistory');
 var historyButtonsEl = document.getElementById("searchHistory");
 var pokeSearchesArray = JSON.parse(localStorage.getItem("Search History")) || [];
-console.log(pokeSearchesArray);
+
 
 // Grab pokemon name / and image
 var fetchPokeData = function(pokeName) {
@@ -20,7 +19,7 @@ var fetchPokeData = function(pokeName) {
             return pokeNameResponse.json();
         })
         .then(function(pokeNameData) {
-            console.log("pokeNameData", pokeNameData.name);
+            
             resetScreen();
 
             // Save local to storage 
@@ -33,7 +32,7 @@ var fetchPokeData = function(pokeName) {
             fetchPokeAbility(dataTypes);
 
             var imgElement = document.getElementById("charcterImg");
-            console.log("charcterImg", pokeNameData.sprites.front_default);
+            
             imgElement.setAttribute("src", pokeNameData.sprites.front_default);
             imgElement.setAttribute("alt", dataTypes);
 
@@ -69,21 +68,7 @@ let getPokeName = function() {
     pokeDiv.append(pTag);
 };
 getPokeName();
-// Nickname Randomizer
-function getNameGen() {
-
-    var nameGenApi = "https://namey.muffinlabs.com/name.json?frequency=rare";
-    fetch(nameGenApi)
-        .then(function(nameResponse) {
-            return nameResponse.json();
-        })
-        .then(function(nameData) {
-            console.log("random name", nameData[0]);
-            pokeNickname.append("(" + nameData[0] + ")");
-        });
-
-    pokeNickname.textContent = "";
-}
+// Nickname Randomizer[RIP]
 
 // Fetch Abilities Function -- Jem
 
@@ -142,7 +127,7 @@ if (storedPoke) {
 
 var loadHistory = function() {
     //pokeSearchesArray = JSON.parse(localStorage.getItem("Search History"));
-    console.log(pokeSearchesArray, pokeSearchesArray.length);
+    
     var loopCOunt = 0;
     //reset the li tags 
     historyButtonsEl.innerHTML = "";
@@ -164,21 +149,11 @@ var loadHistory = function() {
         }
     }
 };
-
-
 submitListener.addEventListener("submit", function(event) {
     event.preventDefault();
     var searchText = document.getElementById("characterName").value;
     var showData = document.getElementById("invisible");
-    showData.classList.remove("invisible");
-    if (document.getElementById("renamePokemon").checked) {
-        getNameGen();
-        fetchPokeData(searchText);
-    } else {
-        fetchPokeData(searchText);
-        characterName.value = "";
-        pokeNickname.textContent = "";
-    }
+    showData.classList.remove("invisible");    
 });
 
 saveListener.addEventListener("click", function(event) {
