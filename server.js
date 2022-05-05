@@ -32,12 +32,12 @@ const sess = {
     })
 };
 
+app.use(session(sess));
+app.use(routes);
+
 // Sequelize
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => {
         console.log(`App listening on port ${PORT}!`);
     });
 })
-
-//Routes
-app.use(routes);
