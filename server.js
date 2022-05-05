@@ -12,13 +12,10 @@ const sequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-
 // middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-//Routes
-app.use(routes);
-
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Sequelize
 sequelize.sync({ force: false }).then(() => {
@@ -26,3 +23,6 @@ sequelize.sync({ force: false }).then(() => {
         console.log(`App listening on port ${PORT}!`);
     });
 })
+
+//Routes
+app.use(routes);
