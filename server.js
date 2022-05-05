@@ -17,6 +17,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// handlebars
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
 // Sequelize
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => {
