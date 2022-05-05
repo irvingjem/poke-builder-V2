@@ -21,6 +21,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+// session
+const sess = {
+    secret: 'super secret secret',
+    cookies: {},
+    resave: false,
+    saveUninitialized: true,
+    store: new sequelizeStore({
+        db: sequelize
+    })
+};
+
 // Sequelize
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => {
