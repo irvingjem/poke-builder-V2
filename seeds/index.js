@@ -1,5 +1,5 @@
 const seedTrainers = require("./trainer-seeds");
-const seedTeams = require("./team-seeds");
+const seedTeam = require("./team-seeds");
 
 const sequelize = require('../config/connection');
 
@@ -8,6 +8,9 @@ const seedAll = async() => {
     console.log('\n----- DATABASE SYNCED ------\n');
 
     await seedTrainers();
+    console.log('\n----- TRAINERS SYNCED ------\n');
+
+    await seedTeam();
     console.log('\n----- TRAINERS SYNCED ------\n');
 
     process.exit(0);
