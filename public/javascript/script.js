@@ -1,12 +1,12 @@
 // Global Variables
 var abilitiesList = document.getElementById("abilities");
-let pokeNickname = document.getElementById("pokeNickname");
+
 let pokeDiv = document.getElementById("pokeDetails");
 var submitListener = document.getElementById("submitListener");
-var saveListener = document.getElementById("saveListener");
+
 var deleteListener = document.getElementById("deleteListener");
 let deleteBtn = document.getElementById("deleteBtn");
-let storedPoke = localStorage.getItem('searchHistory');
+
 var historyButtonsEl = document.getElementById("searchHistory");
 var pokeSearchesArray = JSON.parse(localStorage.getItem("Search History")) || [];
 console.log(pokeSearchesArray);
@@ -41,20 +41,6 @@ var fetchPokeData = function(pokeName) {
         });
 };
 
-function savePokemon(pokeName) {
-    console.log("save btn", pokeName);
-    if (pokeSearchesArray.indexOf(pokeName) === -1) {
-        pokeSearchesArray.push(pokeName);
-        localStorage.setItem(
-            "Search History",
-            JSON.stringify(pokeSearchesArray)
-        );
-
-        //reload search history 
-        loadHistory();
-    }
-}
-
 // Removed old Data from past seach
 function resetScreen() {
     //need to fill
@@ -69,21 +55,8 @@ let getPokeName = function() {
     pokeDiv.append(pTag);
 };
 getPokeName();
-// Nickname Randomizer
-function getNameGen() {
+// Nickname Randomizer[RIP]
 
-    var nameGenApi = "https://namey.muffinlabs.com/name.json?frequency=rare";
-    fetch(nameGenApi)
-        .then(function(nameResponse) {
-            return nameResponse.json();
-        })
-        .then(function(nameData) {
-            console.log("random name", nameData[0]);
-            pokeNickname.append("(" + nameData[0] + ")");
-        });
-
-    pokeNickname.textContent = "";
-}
 
 // Fetch Abilities Function -- Jem
 
@@ -128,83 +101,11 @@ var fetchPokeAbility = function(pokeName) {
 };
 //show the pokemon save in searches array
 
-
 // view saved pokemon function
-function viewPokemon() {
-    if (localStorage.getItem('pokemonSearchesArray') != null) {
-        document.getElementById('searchHistory').innerHTML = savePokemon.textContent = "";
-    }
-}
-
-if (storedPoke) {
-    pokename.textContent = storedPoke
-};
-
-var loadHistory = function() {
-    //pokeSearchesArray = JSON.parse(localStorage.getItem("Search History"));
-    console.log(pokeSearchesArray, pokeSearchesArray.length);
-    var loopCOunt = 0;
-    //reset the li tags 
-    historyButtonsEl.innerHTML = "";
-
-    if (pokeSearchesArray) {
-        //searchHistoryArray = JSON.parse(localStorage.getItem("Search History"));
-        if (pokeSearchesArray.length > 6) {
-            loopCOunt = 6
-        } else {
-            loopCOunt = pokeSearchesArray.length;
-        }
-        for (let i = 0; i < loopCOunt; i++) {
-            var searchHistoryEl = document.createElement("li");
-            searchHistoryEl.className = "btn";
-            searchHistoryEl.setAttribute("data-pokemon", pokeSearchesArray[i]);
-            searchHistoryEl.innerHTML = pokeSearchesArray[i];
-            historyButtonsEl.appendChild(searchHistoryEl);
-            //historyCardEl.removeAttribute("style");
-        }
-    }
-};
-
 
 submitListener.addEventListener("submit", function(event) {
     event.preventDefault();
     var searchText = document.getElementById("characterName").value;
     var showData = document.getElementById("invisible");
-    showData.classList.remove("invisible");
-    if (document.getElementById("renamePokemon").checked) {
-        getNameGen();
-        fetchPokeData(searchText);
-    } else {
-        fetchPokeData(searchText);
-        characterName.value = "";
-        pokeNickname.textContent = "";
-    }
+    showData.classList.remove("invisible");    
 });
-
-saveListener.addEventListener("click", function(event) {
-    event.preventDefault();
-
-    var searchText = document.getElementById("characterName").value;
-    // var showData = document.getElementById("invisible");
-    // showData.classList.remove("invisible");
-    // if (document.getElementById("renamePokemon").checked) {
-    //     getNameGen();
-    //     fetchPokeData(searchText);
-    // } else {
-    //     fetchPokeData(searchText);
-    //     characterName.value = "";
-    //     pokeNickname.textContent = "";
-    // }
-    savePokemon(searchText);
-});
-
-deleteListener.addEventListener("click", function(event) {
-    event.preventDefault();
-    localStorage.removeItem("Search History");
-    //reset the li tags 
-    historyButtonsEl.innerHTML = "";
-    pokeSearchesArray = JSON.parse(localStorage.getItem("Search History")) || [];
-    loadHistory();
-});
-
-loadHistory();
