@@ -1,16 +1,6 @@
-// Global Variables
 var abilitiesList = document.getElementById("abilities");
-
 let pokeDiv = document.getElementById("pokeDetails");
 var submitListener = document.getElementById("submitListener");
-
-var deleteListener = document.getElementById("deleteListener");
-let deleteBtn = document.getElementById("deleteBtn");
-
-var historyButtonsEl = document.getElementById("searchHistory");
-var pokeSearchesArray =
-  JSON.parse(localStorage.getItem("Search History")) || [];
-console.log(pokeSearchesArray);
 
 // Grab pokemon name / and image
 var fetchPokeData = function (pokeName) {
@@ -53,8 +43,6 @@ let getPokeName = function () {
   pTag.textContent = "Name: ";
   pokeDiv.append(pTag);
 };
-getPokeName();
-
 // Fetch Abilities Function -- Jem
 
 var fetchPokeAbility = function (pokeName) {
@@ -96,13 +84,11 @@ var fetchPokeAbility = function (pokeName) {
       abilitiesList.append(liTag3);
     });
 };
-//show the pokemon save in searches array
-
-// view saved pokemon function
+getPokeName();
 
 submitListener.addEventListener("submit", function (event) {
   event.preventDefault();
-  var searchText = document.getElementById("characterName").value;
+  // var searchText = document.getElementById("characterName").value;
   var showData = document.getElementById("invisible");
   showData.classList.remove("invisible");
 });

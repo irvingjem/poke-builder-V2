@@ -1,8 +1,8 @@
 {{!-- login/signup form for user email and password --}}
 
-<form id="submitListener" class="mb-3">
-    <input type="text" class="shadow text-center appearance-none w-full my-3 py-2 px-3 text-gray-700 placeholder:italic" placeholder="Enter user email" required="" id="userEmail" />
-    <input type="password" class="shadow text-center appearance-none w-full my-3 py-2 px-3 text-gray-700 placeholder:italic" placeholder="Enter user password" required="" id="userPassword" />
+<form id="login-form" class="mb-3">
+    <input type="text" class="shadow text-center appearance-none w-full my-3 py-2 px-3 text-gray-700 placeholder:italic" placeholder="Enter user email" required="" id="email-login" />
+    <input type="password" class="shadow text-center appearance-none w-full my-3 py-2 px-3 text-gray-700 placeholder:italic" placeholder="Enter user password" required="" id="password-login" />
   <div class="mb-3 sm:gap-2">
     <div class="mt-3 sm:mt-0">
     <button type="submit" class="w-full flex justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black-900 bg-indigo-400 hover:bg-indigo-500 md:py-4 md:text-lg md:px-10" id="loginListener">
@@ -11,7 +11,9 @@
     </div>
   </div>
 </form>
-{{!-- <script src="/javascript/login.js"></script> --}}
+<script src="/javascript/login.js"></script>
+
+{{!-- EXAMPLE BELOW - from just-tech-news --}}
 {{!-- <form class="signup-form">
   <div>
     <label for="username-signup">username:</label>
@@ -29,4 +31,3 @@
     <button type="submit">signup</button>
   </div>
 </form> --}}
-{{!-- link to javascript for login/signup buttons --}}
