@@ -1,5 +1,5 @@
 // Is this needed?
-const { Team } = rquire('../models')
+const { Team } = require('../models')
 
 const teamData = [{
 
