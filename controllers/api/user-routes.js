@@ -51,4 +51,36 @@ router.post('/', (req, res) => {
     });
 });
 
+// log in route
+router.post('/login', (req, res) => {
+    User.findOne({
+        where: {
+            username: req.body.username
+        }
+    })
+    .then(userData => {
+        if(!userData) {
+            res.status(400).json({ message: 'No user with that username.' });
+            return;
+        }
+
+        // verify user
+        const validPassword = userData.checkPassword(req.body.password);
+
+        if(!validPassword) {
+            res.status(400).json({ message: 'Incorrect password.' });
+            return;
+        }
+
+        req.session.save(() => {
+            // declare session variables
+            req.session.user_id = userData.id;
+            req.session.username = userData.username;
+            req.session.loggedIn = true;
+
+            res.json({ user: userData, message: 'You are now logged in.' });
+        });
+    });
+});
+
 module.exports = router;
