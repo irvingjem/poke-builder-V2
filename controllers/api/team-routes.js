@@ -1,5 +1,5 @@
-// //Import router from api index.js
-// const router = require('./index')
+//Import router from api index.js
+const router = require('express').Router();
 
 //After installing pokepromise(or whatever they call it) grab info from npm package
 // router.get('/:pokeid', (req, res) => {
