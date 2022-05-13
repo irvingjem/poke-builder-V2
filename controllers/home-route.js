@@ -20,11 +20,12 @@ router.get('/dashboard', (req, res) => {
             // where: { userId: req.session.user_id }
         })
         .then(pokeId => {
+            res.json(pokeId)
             res.render('dashboard', {
                 layout: 'main',
-                pokedata: pokeId
+                pokeId: pokeId,
             });
-            // res.json(pokeId)
+
         })
         .catch(err => {
             res.status(500).json(err);
