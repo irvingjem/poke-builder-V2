@@ -1,6 +1,24 @@
 ![PokeBuilder Logo](./public/images/PokeBuilder-V2.png)
-## Our Project
+## Our Project 
+
 We set out to build upon our massively successful PokeBuilder and add user accounts and the ability to save 6 pokemon to your toolbelt.
+
+---
+
+## Table of Content
+[User Story](#user-story)
+
+[MVP Functionality](#mvp-functionality)
+
+[Languages Used](#languages-used)
+
+[APIs Used](#apis-used)
+
+[Project Screenshot](#project-screenshot)
+
+[Links](#links)
+
+[Creators](#creators)
 
 ---
 ## User Story
@@ -19,10 +37,21 @@ THEN the last Pokemon searched is removed from the screen.</br>
 I am able to create a user account and after logging in I am able to generate any Pokemon and save up to 6 to my toolbelt <br>
 
 ---
+## Languages Used
+* HTML
+* Tailwind
+* JavaScript
+* Node.js
+* Express.js
+* bcrypt
+* Sequelize
+* dotenv
+* handlbars
+---
 ## APIs Used 
 
-* [Nickname Generator](https://fungenerators.com/name/pokemon/)  <br>
-* [Stats, Sprites etc.](https://pokeapi.co/)
+### [Nickname Generator](https://fungenerators.com/name/pokemon/) <br>
+### [Stats, Sprites etc.](https://pokeapi.co/)
 
 ---
 ## Project Screenshot
@@ -31,9 +60,11 @@ I am able to create a user account and after logging in I am able to generate an
 ---
 ### Links
 [Project GitHub Repo](https://github.com/irvingjem/poke-builder-V2) <br>
-[Project in GitHub Pages](https://irvingjem.github.io/poke-builder-V2/)
-[Poke Font Generator](https://textcraft.net/style/Textcraft/pokemon)
+[Project in GitHub Pages](https://irvingjem.github.io/poke-builder-V2/)<br>
+[Poke Font Generator](https://textcraft.net/style/Textcraft/pokemon)<br>
 
 ---
 ### Creators
 [Andy](https://github.com/superfishal), [Austin](https://github.com/KingAusti), [Jem](https://github.com/irvingjem), and [Kaia](https://github.com/kaiafay)
+
+![Happy Dancing Pikachu](./public/images/happy-pikachu.gif)<br>
