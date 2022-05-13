@@ -1,7 +1,14 @@
 let saveListener = document.getElementById("saveListener");
 
-saveListener.addEventListener("click", function (event) {
-  event.preventDefault();
+saveListener.addEventListener("click", function(event) {
+    event.preventDefault();
 
-  console.log(globalPokemonName);
+    fetch("/api/users/pokemon", {
+        method: 'put',
+        body: JSON.stringify({ pokeId: globalPokemonName }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(() => document.location.replace("/generate"))
+    console.log(globalPokemonName);
 });
