@@ -1,0 +1,24 @@
+{{!-- THIS IS FROM just-tech-news --}}
+{{!-- <article class="pokemon">
+  <div class="title">
+    <a href="{{post_url}}" target="_blank">{{title}}</a>
+    <span>({{format_url post_url}})</span>
+  </div>
+  <div class="meta">
+    {{vote_count}} {{format_plural "point" vote_count}} by {{user.username}} on {{format_date created_at}}
+    |
+    <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+  </div>
+</article> --}}
+
+{{!-- this is our pokemon display from generate page made into a tailwind card --}}
+    {{!-- <!--Pokemon Name, Image & Details--> --}}
+<div class="max-w-sm rounded overflow-hidden shadow-lg">
+    <img id="charcterImg" class="w-full" src="" alt="pokemom-logo" />
+    <div class="px-6 py-4">
+    <div id="pokeDetails" class="font-bold text-xl mb-2">
+        {{!-- link pokeId here?? --}}
+    </div>
+    <ul class="text-gray-700 text-base" id="abilities"></ul>
+    </div>
+</div>
