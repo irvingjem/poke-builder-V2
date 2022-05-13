@@ -2,7 +2,7 @@ let saveListener = document.getElementById("saveListener");
 
 saveListener.addEventListener("click", function(event) {
     event.preventDefault();
-    // fetch to save name 
+    // fetch from API to save name with UserID
     fetch("/api/users/pokemon", {
         method: 'put',
         body: JSON.stringify({ pokeId: globalPokemonName }),

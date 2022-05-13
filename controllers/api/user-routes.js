@@ -97,7 +97,7 @@ router.post('/logout', (req, res) => {
 });
 
 
-// Create a pokemon model then join them by user
+// Put for pokemon name to be associated with UserID
 
 router.put('/pokemon', (req, res) => {
     console.log(req.body)
@@ -114,7 +114,7 @@ router.put('/pokemon', (req, res) => {
         });
 });
 
-// Get route work in progress
+// Get route work in progress - Get pokemon saved by User_Id
 
 // route.get('/userpoke', (req, res) => {
 //     Pokemon.findAll({

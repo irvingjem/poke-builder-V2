@@ -27,12 +27,11 @@ let fetchPokeData = function(pokeName) {
             document.getElementById("pokename").textContent =
                 "Name: " + dataTypes[0].toUpperCase() + dataTypes.substring(1);
             //Calling the ability fetch based on the character name data
-            fetchPokeAbility(dataTypes);
+            // fetchPokeAbility(dataTypes);
 
             let imgElement = document.getElementById("charcterImg");
             console.log("charcterImgURL:", pokeNameData.sprites.front_default);
             imgElement.setAttribute("src", pokeNameData.sprites.front_default);
-            imgElement.setAttribute("alt", dataTypes);
         });
 };
 // Display Name Function -
@@ -44,43 +43,43 @@ let getPokeName = function() {
     pokeDiv.append(pTag);
 };
 // Fetch Abilities Function -- Jem
-const fetchPokeAbility = function(pokeName) {
-    let pokeAbilityURL = "https://pokeapi.co/api/v2/pokemon/" + pokeName;
-    fetch(pokeAbilityURL)
-        .then(function(pokeAbilityResponse) {
-            return pokeAbilityResponse.json();
-        })
-        .then(function(pokeAbilityData) {
-            let dataAbility = pokeAbilityData.abilities;
-            let dataFirstAbility = dataAbility[0];
-            let dataSecondAbility = dataAbility[1];
-            let dataThirdAbility = dataAbility[2];
-            //createElement
-            let liTag = document.createElement("li");
-            liTag.textContent =
-                // a lot of code to capitalize the first letter
-                dataFirstAbility.ability.name.charAt(0).toUpperCase() +
-                dataFirstAbility.ability.name.slice(1);
-            //append it to ul List
-            abilitiesList.append(liTag);
-            //createElement
-            let liTag2 = document.createElement("li");
-            liTag2.textContent =
-                // a lot of code to capitalize the first letter
-                dataSecondAbility.ability.name.charAt(0).toUpperCase() +
-                dataSecondAbility.ability.name.slice(1);
-            //append it to ul List
-            abilitiesList.append(liTag2);
-            //createElement
-            let liTag3 = document.createElement("li");
-            liTag3.textContent =
-                // a lot of code to capitalize the first letter
-                dataThirdAbility.ability.name.charAt(0).toUpperCase() +
-                dataThirdAbility.ability.name.slice(1);
-            //append it to ul List
-            abilitiesList.append(liTag3);
-        });
-};
+// const fetchPokeAbility = function(pokeName) {
+//     let pokeAbilityURL = "https://pokeapi.co/api/v2/pokemon/" + pokeName;
+//     fetch(pokeAbilityURL)
+//         .then(function(pokeAbilityResponse) {
+//             return pokeAbilityResponse.json();
+//         })
+//         .then(function(pokeAbilityData) {
+//             let dataAbility = pokeAbilityData.abilities;
+//             let dataFirstAbility = dataAbility[0];
+//             let dataSecondAbility = dataAbility[1];
+//             let dataThirdAbility = dataAbility[2];
+//             //createElement
+//             let liTag = document.createElement("li");
+//             liTag.textContent =
+//                 // a lot of code to capitalize the first letter
+//                 dataFirstAbility.ability.name.charAt(0).toUpperCase() +
+//                 dataFirstAbility.ability.name.slice(1);
+//             //append it to ul List
+//             abilitiesList.append(liTag);
+//             //createElement
+//             let liTag2 = document.createElement("li");
+//             liTag2.textContent =
+//                 // a lot of code to capitalize the first letter
+//                 dataSecondAbility.ability.name.charAt(0).toUpperCase() +
+//                 dataSecondAbility.ability.name.slice(1);
+//             //append it to ul List
+//             abilitiesList.append(liTag2);
+//             //createElement
+//             let liTag3 = document.createElement("li");
+//             liTag3.textContent =
+//                 // a lot of code to capitalize the first letter
+//                 dataThirdAbility.ability.name.charAt(0).toUpperCase() +
+//                 dataThirdAbility.ability.name.slice(1);
+//             //append it to ul List
+//             abilitiesList.append(liTag3);
+//         });
+// };
 
 getPokeName();
 
