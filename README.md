@@ -60,7 +60,7 @@ I am able to create a user account and after logging in I am able to generate an
 ---
 ### Links
 [Project GitHub Repo](https://github.com/irvingjem/poke-builder-V2) <br>
-[Project in GitHub Pages](https://irvingjem.github.io/poke-builder-V2/)<br>
+[~~Deployed Project on Heroku~~](https://heroku.com) <br>
 [Poke Font Generator](https://textcraft.net/style/Textcraft/pokemon)<br>
 
 ---
