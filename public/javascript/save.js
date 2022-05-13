@@ -1,3 +1,5 @@
+// const { getEventListeners } = require("mysql2/typings/mysql/lib/Connection");
+
 let saveListener = document.getElementById("saveListener");
 
 saveListener.addEventListener("click", function(event) {
@@ -12,3 +14,13 @@ saveListener.addEventListener("click", function(event) {
     }).then(() => document.location.replace("/generate/"))
     console.log(globalPokemonName);
 });
+
+
+// getEventListeners.addEventListener('click', function(event) {
+//     fetch('/', {
+//         method: 'get',
+//         body: "" ,
+//         headers: {
+//             'Content-Type': 'application/json'
+//     })
+// })

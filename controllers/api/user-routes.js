@@ -116,14 +116,15 @@ router.put('/pokemon', (req, res) => {
 
 // Get route work in progress - Get pokemon saved by User_Id
 
-// route.get('/userpoke', (req, res) => {
-//     Pokemon.findAll({
-//         where: { userId: req.session.user_id }
-//     }).then(dbUserPoke => {
-//         res.json(dbUserPoke);
+router.get('/userpoke', (req, res) => {
+    Pokemon.findAll({
+        limit: 6,
+        where: { userId: req.session.user_id }
+    }).then(dbUserPoke => {
+        res.json(dbUserPoke);
 
-//     })
-// });
+    })
+});
 
 // router.push('', (req, res) => {
 

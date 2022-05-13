@@ -10,7 +10,7 @@ Pokemon.init({
         autoIncrement: true
     },
     pokeId: {
-        type: DataTypes.STRING
+        type: DataTypes.STRING,
     }
 }, { sequelize })
 
