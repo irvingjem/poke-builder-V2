@@ -83,7 +83,7 @@ const fetchPokeAbility = function (pokeName) {
 
 getPokeName();
 
-submitListener.addEventListener("click", function (event) {
+submitListener.addEventListener("submit", function (event) {
   event.preventDefault();
   console.log(event);
   let searchText = document.getElementById("characterName").value;
