@@ -2,8 +2,14 @@
 <h2>Your Pokemon Belt</h2>
 </section>
 {{#each pokeId}}
+<div>
 <p>
-{{pokeId.id}}
+{{pokeId}}
 </p>
+<button value={{id}} class="deletelistener"> Remove From Team </button>
+</div>
 {{/each}}
 
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="/javascript/dashboard.js"></script>
