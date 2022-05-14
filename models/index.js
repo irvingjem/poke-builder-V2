@@ -1,9 +1,13 @@
 const User = require('./User')
 const Pokemon = require('./Pokemon')
 
-Pokemon.belongsTo(User);
+Pokemon.belongsTo(User, {
+    foreignKey: 'user_id'
+});
 
-User.hasMany(Pokemon);
+User.hasMany(Pokemon, {
+    foreignKey: 'user_id'
+});
 
 
 module.exports = {
