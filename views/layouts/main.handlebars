@@ -16,13 +16,13 @@
     {{!-- <h1>
       <a href="/">Login/Signup</a>
     </h1> --}}
-<nav>
-  {{#if loggedIn}}
+<nav class="space-x-3">
+  {{!-- {{#if loggedIn}} --}}
   <a href="/generate">Generate Pokemon!</a>
-  <button id="logout" class="btn-no-style">Logout</button>
-  {{else}}
+  <button id="logout" class="btn-no-style"><a href="/">Logout</a></button>
+  {{!-- {{else}} --}}
   <a href="/">Login</a>
-  {{/if}}
+  {{!-- {{/if}} --}}
 </nav>
   </header>
   <div>
