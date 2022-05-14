@@ -11,7 +11,9 @@ router.get('/', (req, res) => {
 })
 
 router.get('/generate', (req, res) => {
-    res.render('generate')
+    res.render('generate', {
+        loggedIn: true
+    })
 });
 
 router.get('/dashboard', (req, res) => {
@@ -26,6 +28,7 @@ router.get('/dashboard', (req, res) => {
             }))
             console.log(pokemon)
             res.render('dashboard', {
+                loggedIn: true,
                 layout: 'main',
                 pokeId: pokemon
             });
