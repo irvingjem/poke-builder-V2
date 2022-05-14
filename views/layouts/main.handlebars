@@ -18,10 +18,11 @@
     </h1> --}}
 <nav>
   {{#if loggedIn}}
+<nav class="space-x-3">
   <a href="/generate">Generate Pokemon!</a>
   <button id="logout" class="btn-no-style">Logout</button>
   {{else}}
-  <a href="/">Login</a>
+  <button id="logout" class="btn-no-style"><a href="/">Logout</a></button>
   {{/if}}
 </nav>
   </header>
