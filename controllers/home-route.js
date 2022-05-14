@@ -17,13 +17,17 @@ router.get('/generate', (req, res) => {
 router.get('/dashboard', (req, res) => {
     Pokemon.findAll({
             limit: 6,
-            // where: { userId: req.session.user_id }
+            where: { userId: req.session.user_id }
         })
         .then(pokeId => {
-            res.json(pokeId)
+            // console.log("pls work", pokeId)
+            const pokemon = pokeId.map((pokemon) => pokemon.get({
+                plain: true
+            }))
+            console.log(pokemon)
             res.render('dashboard', {
                 layout: 'main',
-                pokeId: pokeId,
+                pokeId: pokemon
             });
 
         })

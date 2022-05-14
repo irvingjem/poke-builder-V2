@@ -126,9 +126,23 @@ router.get('/userpoke', (req, res) => {
     })
 });
 
+router.delete('/:id', (req, res) => {
+    console.log('\n  ------- ', req.params, '\n --------')
+    Pokemon.destroy({
+            where: { id: req.params.id }
+        }).then(affectedRows => {
+            if (affectedRows > 0) {
+                res.status(200).end();
+            } else {
+                res.status(404).end();
+            }
+        })
+        .catch(err => {
+            res.status(500).json(err);
+        });
+});
+
+
 // router.push('', (req, res) => {
-
-// })
-
 
 module.exports = router;
