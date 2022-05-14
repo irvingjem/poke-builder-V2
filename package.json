@@ -1,33 +1,33 @@
 {
-  "name": "poke-builder-v2",
-  "version": "1.0.0",
-  "description": "![PokeBuilder Logo](./assets/images/PokeBuilder.png) ## Our Project * We set out to build a site where you can look up the stats of any Pokemon by either name or number.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "watch": "npm run nodemon"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/irvingjem/poke-builder-V2.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/irvingjem/poke-builder-V2/issues"
-  },
-  "homepage": "https://github.com/irvingjem/poke-builder-V2#readme",
-  "dependencies": {
-    "bcrypt": "^5.0.1",
-    "connect-session-sequelize": "^7.1.3",
-    "dotenv": "^16.0.0",
-    "express": "^4.18.0",
-    "express-handlebars": "^6.0.5",
-    "express-session": "^1.17.2",
-    "mysql2": "^2.3.3",
-    "nodemon": "^2.0.16",
-    "pokedex-promise-v2": "^4.0.0",
-    "sequelize": "^6.19.0"
-  }
+    "name": "poke-builder-v2",
+    "version": "1.0.0",
+    "description": "![PokeBuilder Logo](./assets/images/PokeBuilder.png) ## Our Project * We set out to build a site where you can look up the stats of any Pokemon by either name or number.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js",
+        "seed": "node seeds/index.js",
+        "watch": "nodemon run server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/irvingjem/poke-builder-V2.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/irvingjem/poke-builder-V2/issues"
+    },
+    "homepage": "https://github.com/irvingjem/poke-builder-V2#readme",
+    "dependencies": {
+        "bcrypt": "^5.0.1",
+        "connect-session-sequelize": "^7.1.3",
+        "dotenv": "^16.0.0",
+        "express": "^4.18.0",
+        "express-handlebars": "^6.0.5",
+        "express-session": "^1.17.2",
+        "mysql2": "^2.3.3",
+        "pokedex-promise-v2": "^4.0.0",
+        "sequelize": "^6.19.0"
+    }
 }
