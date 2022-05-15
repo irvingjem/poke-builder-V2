@@ -11,7 +11,7 @@ saveListener.addEventListener("click", function(event) {
     // fetch from API to save name with UserID
     fetch("/api/users/pokemon", {
         method: 'put',
-        body: JSON.stringify({ pokeId: globalPokemonName }),
+        body: JSON.stringify({ pokeId: globalPokemonName }), // set the dex entry number in the reqest ex: pokeDex: globalPokeDex
         headers: {
             'Content-Type': 'application/json'
         } // user save redirect

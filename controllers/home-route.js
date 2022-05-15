@@ -24,15 +24,14 @@ router.get('/dashboard', (req, res) => {
         .then(pokeId => {
             // console.log("pls work", pokeId)
             const pokemon = pokeId.map((pokemon) => pokemon.get({
-                plain: true
+                plain: true,
             }))
-            console.log(pokemon)
+            console.log("here is the pokemon", pokemon)
             res.render('dashboard', {
                 loggedIn: true,
                 layout: 'main',
                 pokeId: pokemon
             });
-
         })
         .catch(err => {
             res.status(500).json(err);

@@ -103,6 +103,7 @@ router.put('/pokemon', (req, res) => {
     console.log(req.body)
     Pokemon.create({
             pokeId: req.body.pokeId,
+            // pokeDex: req.body.pokeDex, we need the dex entry here
             userId: req.session.user_id
         }).then(dbUserData => {
             res.json(dbUserData);
