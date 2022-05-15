@@ -103,6 +103,7 @@ router.put('/pokemon', (req, res) => {
     console.log(req.body)
     Pokemon.create({
             pokeId: req.body.pokeId,
+            // pokeDex: req.body.pokeDex, we need the dex entry here
             userId: req.session.user_id
         }).then(dbUserData => {
             res.json(dbUserData);
@@ -116,18 +117,33 @@ router.put('/pokemon', (req, res) => {
 
 // Get route work in progress - Get pokemon saved by User_Id
 
-// route.get('/userpoke', (req, res) => {
-//     Pokemon.findAll({
-//         where: { userId: req.session.user_id }
-//     }).then(dbUserPoke => {
-//         res.json(dbUserPoke);
+router.get('/userpoke', (req, res) => {
+    Pokemon.findAll({
+        limit: 6,
+        where: { userId: req.session.user_id }
+    }).then(dbUserPoke => {
+        res.json(dbUserPoke);
 
-//     })
-// });
+    })
+});
+
+router.delete('/:id', (req, res) => {
+    console.log('\n  ------- ', req.params, '\n --------')
+    Pokemon.destroy({
+            where: { id: req.params.id }
+        }).then(affectedRows => {
+            if (affectedRows > 0) {
+                res.status(200).end();
+            } else {
+                res.status(404).end();
+            }
+        })
+        .catch(err => {
+            res.status(500).json(err);
+        });
+});
+
 
 // router.push('', (req, res) => {
-
-// })
-
 
 module.exports = router;

@@ -2,6 +2,7 @@ let abilitiesList = document.getElementById("abilities");
 let pokeDiv = document.getElementById("pokeDetails");
 let submitListener = document.getElementById("submitListener");
 let globalPokemonName;
+// let globalPokeDex; we want the dex entry to save to db
 
 function resetScreen() {
     //need to fill
@@ -16,8 +17,11 @@ let fetchPokeData = function(pokeName) {
             return pokeNameResponse.json();
         })
         .then(function(pokeNameData) {
-            console.log("pokeNameData:", pokeNameData.name);
+            // we can get dex entry like this, we just need to save it in the db
+            console.log("pokeNameData:", pokeNameData.id);
             globalPokemonName = pokeNameData.name.toLowerCase();
+            // try setting that global here using pokeNameData.id from the response, which is the dex entry
+            // globalPokeDex = pokeNameData.id;
             resetScreen();
 
             // Save local to storage
@@ -42,47 +46,11 @@ let getPokeName = function() {
     pTag.textContent = "Name: ";
     pokeDiv.append(pTag);
 };
-// Fetch Abilities Function -- Jem
-// const fetchPokeAbility = function(pokeName) {
-//     let pokeAbilityURL = "https://pokeapi.co/api/v2/pokemon/" + pokeName;
-//     fetch(pokeAbilityURL)
-//         .then(function(pokeAbilityResponse) {
-//             return pokeAbilityResponse.json();
-//         })
-//         .then(function(pokeAbilityData) {
-//             let dataAbility = pokeAbilityData.abilities;
-//             let dataFirstAbility = dataAbility[0];
-//             let dataSecondAbility = dataAbility[1];
-//             let dataThirdAbility = dataAbility[2];
-//             //createElement
-//             let liTag = document.createElement("li");
-//             liTag.textContent =
-//                 // a lot of code to capitalize the first letter
-//                 dataFirstAbility.ability.name.charAt(0).toUpperCase() +
-//                 dataFirstAbility.ability.name.slice(1);
-//             //append it to ul List
-//             abilitiesList.append(liTag);
-//             //createElement
-//             let liTag2 = document.createElement("li");
-//             liTag2.textContent =
-//                 // a lot of code to capitalize the first letter
-//                 dataSecondAbility.ability.name.charAt(0).toUpperCase() +
-//                 dataSecondAbility.ability.name.slice(1);
-//             //append it to ul List
-//             abilitiesList.append(liTag2);
-//             //createElement
-//             let liTag3 = document.createElement("li");
-//             liTag3.textContent =
-//                 // a lot of code to capitalize the first letter
-//                 dataThirdAbility.ability.name.charAt(0).toUpperCase() +
-//                 dataThirdAbility.ability.name.slice(1);
-//             //append it to ul List
-//             abilitiesList.append(liTag3);
-//         });
-// };
 
+// Start point
 getPokeName();
 
+// Reset page
 submitListener.addEventListener("submit", function(event) {
     event.preventDefault();
     console.log(event);
