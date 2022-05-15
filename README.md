@@ -26,11 +26,13 @@ GIVEN a need to search for a Pokemon</br>
 WHEN I search for a Pokemon by typing name or number in the search field and press the GENERATE button.</br>
 THEN a high-quality, sprite representing a Pokemon and its abilities are dynamically generated.</br>
 WHEN I create a user</br>
-THEN I can save my Pokemon to a db table</br>
+THEN I can log in and save my Pokemon to my toolbelt</br>
 WHEN I press the save button</br>
 THEN the last Pokemon generated will be saved to localstorage</br>
 WHEN I select the delete button.</br>
 THEN the last Pokemon searched is removed from the screen.</br>
+WHEN I press the log out button
+THEN I am able to log out of my user profile and am redirected to the login page
 
 ---
 ## MVP Functionality
@@ -46,11 +48,12 @@ I am able to create a user account and after logging in I am able to generate an
 * bcrypt
 * Sequelize
 * dotenv
-* handlbars
+* handlebars
+* nodemon
 ---
 ## APIs Used 
 
-### [Nickname Generator](https://fungenerators.com/name/pokemon/) <br>
+### [~~Nickname Generator~~](https://fungenerators.com/name/pokemon/) <br>
 ### [Stats, Sprites etc.](https://pokeapi.co/)
 
 ---
