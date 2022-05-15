@@ -4,7 +4,7 @@
 {{#each pokeId}}
 <div class="grid grid-rows-6 grid-flow-row gap-2"></div>
 <div class="max-w-sm rounded overflow-hidden shadow-lg">
-  <img id="pokeSprite" class="w-full" src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokedex}}.png' alt="pokemom-logo" />
+  {{!-- <img id="pokeSprite" class="w-full" src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokedex}}.png' alt="pokemom-logo" /> --}}
   <div class="px-6 py-4">
     <div class="font-bold text-xl mb-2">{{pokeId}}</div>
     <button value={{id}} class="deletelistener bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"> Remove From Team </button>
