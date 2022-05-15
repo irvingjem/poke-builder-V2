@@ -2,6 +2,7 @@ let abilitiesList = document.getElementById("abilities");
 let pokeDiv = document.getElementById("pokeDetails");
 let submitListener = document.getElementById("submitListener");
 let globalPokemonName;
+// let globalPokeDex; we want the dex entry to save to db
 
 function resetScreen() {
     //need to fill
@@ -16,8 +17,11 @@ let fetchPokeData = function(pokeName) {
             return pokeNameResponse.json();
         })
         .then(function(pokeNameData) {
-            console.log("pokeNameData:", pokeNameData.name);
+            // we can get dex entry like this, we just need to save it in the db
+            console.log("pokeNameData:", pokeNameData.id);
             globalPokemonName = pokeNameData.name.toLowerCase();
+            // try setting that global here using pokeNameData.id from the response, which is the dex entry
+            // globalPokeDex = pokeNameData.id;
             resetScreen();
 
             // Save local to storage
