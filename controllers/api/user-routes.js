@@ -50,6 +50,10 @@ router.post('/', (req, res) => {
 
                 res.json(userData);
             });
+        })
+        .catch(err => {
+            res.status(400).json(err);
+            res.render('homepage');
         });
 });
 
